@@ -1,0 +1,54 @@
+﻿@model About
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Areas/CourseAdmin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Update</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <img class="img-thumbnail" src="~/images/@Model.Images" />
+        </div>
+
+
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <textarea>@Model.Header</textarea>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <textarea>@Model.BoldWord</textarea>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <textarea>@Model.TitleOne</textarea>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <textarea>@Model.TitleTwo</textarea>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <textarea>@Model.TitleThree</textarea>
+        </div>
+    </div>
+
+
+</div>
+<div class="row">
+    <div class="col-12">
+        <a asp-action="Index" class="btn btn-primary btn-block">back to index</a>
+    </div>
+</div>
+

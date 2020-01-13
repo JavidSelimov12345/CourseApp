@@ -1,0 +1,32 @@
+﻿@model Tutor
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Areas/CourseAdmin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Details</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <img style="height:100px;" class="img-thumbnail" src="~/images/@Model.image" />
+        </div>
+    </div>
+</div>
+
+<form metod="post"asp-area="CourseAdmin"asp-controller="Tutors"asp-action="DeletePost"asp-route-id="@Model.Id">
+   
+    <div class="alert alert-danger">
+        <p>Are you sue to delete</p> 
+        <input type="submit" class="btn btn-danger btn-block" value="Delete" />
+    </div>
+    
+</form>
+
+
+
+<div class="row">
+    <div class="col-12">
+        <a asp-action="Index" class="btn btn-primary btn-block">back to index</a>
+    </div>
+</div>
+

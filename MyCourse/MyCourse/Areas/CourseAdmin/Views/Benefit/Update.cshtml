@@ -1,0 +1,35 @@
+﻿@model Benefit
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Areas/CourseAdmin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Update</h1>
+
+
+<h1>Details of Levels</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+               
+
+                <label asp-for="number">Header</label>
+                <textarea asp-for="number" class="form-control"></textarea>
+                <span asp-validation-for="number" class="text-danger"></span>
+
+                <label asp-for="Content">Bashliq</label>
+                <textarea asp-for="Content" class="form-control"></textarea>
+                <span asp-validation-for="Content" class="text-danger"></span>
+
+                
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <a asp-action="Index" class="btn btn-primary btn-block">back to index</a>
+    </div>
+</div>

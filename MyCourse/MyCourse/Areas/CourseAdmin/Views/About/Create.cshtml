@@ -1,0 +1,43 @@
+﻿
+@model About;
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/CourseAdmin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<form method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="Photo">Image</label>
+        <input asp-for="Photo" accept="image/*" class="form-control" />
+        <span asp-validation-for="Photo" class="text-danger"></span>
+
+        <label asp-for="Header">Bashliq</label>
+        <textarea asp-for="Header" class="form-control"></textarea>
+        <span asp-validation-for="Header" class="text-danger"></span>
+
+        <label asp-for="BoldWord">Qalin soz</label>
+        <textarea asp-for="BoldWord" class="form-control"></textarea>
+        <span asp-validation-for="BoldWord" class="text-danger"></span>
+
+        <label asp-for="TitleOne">Content</label>
+        <textarea asp-for="TitleOne" class="form-control"></textarea>
+        <span asp-validation-for="TitleOne" class="text-danger"></span>
+
+        <label asp-for="TitleTwo">Content</label>
+        <textarea asp-for="TitleTwo" class="form-control"></textarea>
+        <span asp-validation-for="TitleTwo" class="text-danger"></span>
+
+        <label asp-for="TitleThree">Content</label>
+        <textarea asp-for="TitleThree" class="form-control"></textarea>
+        <span asp-validation-for="TitleThree" class="text-danger"></span>
+
+    </div>
+    <input type="submit" class="btn btn-success btn-block" value="Create" />
+</form>
+
+<div class="row" style="margin-top:30px;">
+    <div class="col-12">
+        <a asp-action="Index" class="btn btn-primary btn-block">back to index</a>
+    </div>
+</div>
+

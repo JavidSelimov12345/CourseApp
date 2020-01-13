@@ -1,0 +1,33 @@
+﻿@model Benefit
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Areas/CourseAdmin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Delete level</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h3>@Model.number</h3>
+            <p>@Model.Content</p>
+        </div>
+    </div>
+</div>
+
+<form metod="post" asp-area="CourseAdmin" asp-controller="Benefit" asp-action="DeletePost" asp-route-id="@Model.id">
+
+    <div class="alert alert-danger">
+        <p>Are you sue to delete</p>
+        <input type="submit" class="btn btn-danger btn-block" value="Delete" />
+    </div>
+
+</form>
+
+
+
+<div class="row">
+    <div class="col-12">
+        <a asp-action="Index" class="btn btn-primary btn-block">back to index</a>
+    </div>
+</div>

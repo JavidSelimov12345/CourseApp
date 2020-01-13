@@ -1,0 +1,234 @@
+﻿
+@model HomeIndexVM
+
+
+
+
+@foreach (var item in Model.background)
+{
+    <div id="home" class="home" style="        background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent 65%), url(images/@item.Image) center no-repeat;
+        background-size: cover;
+">
+        <div class="home-wrapper container">
+            <h1 class="home-title">
+
+
+                @item.Title
+
+            </h1>
+            <!--        <p class="home-subtitle">Yüksək texnologiyalar nəslinə sən də qoşul</p>-->
+
+            <a class="application btn-big bnt-aquamarine" href="#appForm">Müraciət et</a>
+
+        </div>
+    </div>
+}
+
+
+
+
+<section id="about" class="about">
+
+    @for (var i = 0; i < Model.Abouts.Count(); i++)
+    {
+
+
+        <div class="about-item @( i%2 == 0 ? "wow fadeInLeft":"about-item--reverse-order wow fadeInRight")" data-wow-delay="0.3s">
+            <article class="about-item__article">
+                <h2 class="about-item__article-title">
+                   @Model.Abouts[i].Header
+                </h2>
+                <p class="about-item__article-splitter"></p>
+                <div class="about-item__article-text">
+                    <p><strong class="txt-bold">@Model.Abouts[i].TitleOne</strong> –  Öz övladlarına yüksək keyfiyyətlərə malik olan gənclərdən təlimçi seçmələrinə yardımçı olmaq məqsədilə yaradılmışdır.</p>
+                    <p>@Model.Abouts[i].TitleTwo</p>
+                    <p class="about-item__article-text--bold"></p>
+                    <p>@Model.Abouts[i].TitleThree</p>
+
+                </div>
+            </article>
+            <div class="about-item__image-box">
+                <img src="~/images/@Model.Abouts[i].Images" alt="" class="about-item__img">
+
+            </div>
+        </div>
+
+
+    }
+
+
+    @*<div class="about-item wow fadeInLeft" data-wow-delay="0.3s">
+        <article class="about-item__article">
+            <h2 class="about-item__article-title">
+                Layihə haqqında
+            </h2>
+            <p class="about-item__article-splitter"></p>
+            <div class="about-item__article-text">
+                <p><strong class="txt-bold">CSZ Akademiyası</strong> –  Öz övladlarına yüksək keyfiyyətlərə malik olan gənclərdən təlimçi seçmələrinə yardımçı olmaq məqsədilə yaradılmışdır.</p>
+                <p>Öz bilik və bacarıqlarına güvənən DİM (TQDK) balları 500 dən yuxarı olan hər bir gənc burada öz təlim xidmətlərini təklif edə bilər</p>
+                <p class="about-item__article-text--bold"></p>
+                <p>Özünün və ya övladının keyfiyyətli təlim görməyini istəyən hər bir kəs akademiyanın təlimçilərinə müraciət edə bilər</p>
+
+            </div>
+        </article>
+        <div class="about-item__image-box">
+            <img src="~/KursSayt/wp-content/uploads/2019/10/about_1.jpg" alt="" class="about-item__img">
+
+        </div>
+    </div>
+
+    <div class="about-item about-item--reverse-order wow fadeInRight" data-wow-delay="0.3s">
+        <article class="about-item__article">
+            <h2 class="about-item__article-title">
+                Nə təklif edirik?
+            </h2>
+            <p class="about-item__article-splitter"></p>
+            <div class="about-item__article-text">
+                <p>Bizim məqsədimiz gənc və savadlı kadrlardan ibarət bir baza yaratmaqdır.Hazırda dünyanın ən populyar təcrübələrindən biri də  coach metodu ilə hazırlaşmaqdır.Məhz bu cür coachları sizin üçün əlçatan etmək məqsədilə belə bir baza yaratmağı qərara aldıq</p>
+                <p class="about-item__article-text--bold"></p>
+                <p>Bu metodla həm cibinizə qənaət edəcək həm də enerjili və bilikli kadrların tecrübəsindən yararlanacaqsınız.Təlimçilər bura seçilməzdən qabaq müxtəlif imtahanlar verəcək və fərdi göstəricilərə sahib olacaq.Azərbaycanın hər bir bölgəsindən burada iştirak edən təlimçiləri öz evinizə yaxın məntəqələrdən sifariş edə biləcəksiniz.İbtidai sinifdən tutumuş universitet tələbələrinə kimi hər bir kəs təlimçilərimizin xidmətindən yararlana biləcək</p>
+
+            </div>
+        </article>
+        <div class="about-item__image-box">
+
+            <img src="~/KursSayt/wp-content/uploads/2019/10/about_2.jpg" alt="" class="about-item__img">
+
+        </div>
+    </div>*@
+
+
+
+</section>
+<section id="benefits" class="benefits">
+    <div class="container">
+        <h3 class="benefits-title wow fadeInLeft" data-wow-delay="0.3s">
+            Övladınız  nə əldə edəcək?
+        </h3>
+        <div class="benefits-list">
+
+
+
+
+           
+
+            @foreach (var item in Model.Benefits)
+            {
+                <div class="benefits-list__item wow fadeInUp" data-wow-delay="0.2s">
+
+                    <div class="benefits-list__item-num">@item.number</div>
+
+
+                    <p class="benefits-list__item-text">@item.Content</p>
+
+                </div>
+            }
+
+
+
+
+
+
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+<section class="stages" id="stages">
+    <div class="container">
+        <h2 class="stages__title wow fadeInLeft" data-wow-delay="0.3s">Qəbul mərhələləri</h2>
+        <div class="stages-wrapper">
+
+
+            @foreach (var item in Model.Level)
+            {
+
+
+                <div class="stages__block wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="stages__block_main-block">
+                        
+                        <p class="stages__block_main-block_title">@item.Header</p>
+                    </div>
+                    <p class="stages__block_main-block_text">@item.Content</p>
+                </div>
+
+
+
+            }
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+</section>
+<section class="app-wrapper" id="appForm">
+    <div class="container app wow fadeInUp" data-wow-delay="0.3s">
+        <h2 class="app__title">Ərizə göndər</h2>
+        <div role="form" class="wpcf7" id="wpcf7-f54-o1" lang="ru-RU" dir="ltr">
+            <div class="screen-reader-response"></div>
+            <form action="#" method="post" class="wpcf7-form app-form" novalidate="novalidate" id="inquiry_form">
+                <div style="display: none;">
+                    <input type="hidden" name="_wpcf7" value="54" />
+                    <input type="hidden" name="_wpcf7_version" value="5.1.4" />
+                    <input type="hidden" name="_wpcf7_locale" value="ru_RU" />
+                    <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f54-o1" />
+                    <input type="hidden" name="_wpcf7_container_post" value="0" />
+                </div>
+                <label for="formName" class="app-form__text app-form__text--half-width">
+                    Ad, Soyad
+                    <input type="text" name="formName" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required app-form__text-field" id="formName" aria-required="true" aria-invalid="false" placeholder="A.S.A. Məmmədov Məmməd Məmməd oğlu" />
+                </label>
+                <label for="formAge" class="app-form__text app-form__text--half-width">
+                    Yaş
+                    <input type="number" name="formAge" value="" class="wpcf7-form-control wpcf7-number wpcf7-validates-as-required wpcf7-validates-as-number app-form__text-field" id="formAge" min="0" max="99" aria-required="true" aria-invalid="false" placeholder="Yaşınızı göstərin" />
+                </label>
+                <label for="formPhone" class="app-form__text app-form__text--half-width">
+                    Telefon
+                    <input type="tel" name="zipCode" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel app-form__text-field" id="zipCode" aria-required="true" aria-invalid="false" placeholder="+ 994 00 000 00 00" />
+                </label>
+                <label for="formMail" class="app-form__text app-form__text--half-width">
+                    E-mail
+                    <input type="email" name="formMail" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email app-form__text-field" id="formMail" aria-required="true" aria-invalid="false" placeholder="Email address" />
+                </label>
+
+                <label for="formBal" class="app-form__text app-form__text--half-width">
+                    TQDK balı
+                    <input type="Bal" name="formBal" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email app-form__text-field" id="formBal" aria-required="true" aria-invalid="false" placeholder="Balınız" />
+                </label>
+
+                <label for="formBal" class="app-form__text app-form__text--half-width">
+                    TQDK balı
+                    <input type="Bal" name="formBal" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email app-form__text-field" id="formBal" aria-required="true" aria-invalid="false" placeholder="Balınız" />
+                </label>
+                <label for="personalData" class="app-form__data">
+                    <input required checked type="checkbox" id="personalData">
+                    <span class="app-form__data--check"></span>
+                    <span class="app-form__data--check--span">Fərdi məlumatlarımın emalına icazə verirəm <br /> 18 yaşımın tamamlandığını və bank sektorunda çalışmadığımı təsdiqləyirəm</span>
+                </label>
+
+                <input type="submit" value="Göndər" class="wpcf7-form-control wpcf7-submit btn-extra" /><div class="wpcf7-response-output wpcf7-display-none"></div>
+            </form>
+        </div>
+    </div>
+
+    <div class="app-modal app-modal--open">
+        <!-- <div class="app-modal__msg">
+            <p class="app-modal__highlight">Hörmətli namizəd!</p>
+            <p class="app-modal__highlight">Təəssüf ki, proqrama qəbul 1 oktyabr 2019-cu il tarixindən etibarən başa çatıb. :(</p>
+            <p class="app-modal__highlight">Sizi IBA Tech Akademiyasının növbəti proqramlarında səbrsizliklə gözləyirik.</p>
+        </div> -->
+    </div>
+
+</section>

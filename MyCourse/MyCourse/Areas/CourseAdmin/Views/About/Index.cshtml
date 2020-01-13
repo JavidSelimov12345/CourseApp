@@ -1,0 +1,72 @@
+﻿
+@model IEnumerable<About>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/CourseAdmin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<h1>Tutor admin</h1>
+
+<div class="container-fluid">
+        <div class="row my-3">
+
+            <div class="col-6">
+                <a asp-area="CourseAdmin" asp-controller="About" asp-action="Create" class="btn btn-block btn-primary">Create+++</a>
+            </div>
+        </div>
+    </div>
+
+
+
+<table class="table table-bordered table-hover table-responsive">
+
+    <thead>
+        <tr>
+            <th>Image</th>
+
+            <th>Header</th>
+            <th>Boldword</th>
+            <th>Title1</th>
+            <th>Title2</th>
+            <th>Title3</th>
+            <th>Tools</th>
+
+        </tr>
+
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td> <img class="img-thumbnail" style="width:150px;" src="~/images/@item.Images" /> </td>
+
+            <td>@item.Header</td>
+            <td>@item.BoldWord</td>
+            <td>@item.TitleOne</td>
+            <td>@item.TitleTwo</td>
+            <td>@item.TitleThree</td>
+            <td style="align-items:center;">
+                <a title="Edit" asp-action="Edit" asp-route-id="@item.Id" class="btn-warning">Edit</a>
+                <a title="Edit" asp-action="Details" asp-route-id="@item.Id" class="btn-warning">Details</a>
+
+                @if (Model.Count() > 1)
+            {<a title="Updtae" asp-action="Update" asp-route-id="@item.Id" class="btn-primary">Update</a>
+                <a title="Delete" asp-action="Delete" asp-route-id="@item.Id" class="btn-danger">Delete</a>
+
+            }
+
+
+
+            </td>
+
+        </tr>
+
+        }
+
+    </tbody>
+
+
+</table>
+
+

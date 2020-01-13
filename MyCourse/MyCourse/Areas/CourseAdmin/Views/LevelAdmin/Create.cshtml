@@ -1,0 +1,32 @@
+﻿@model Level
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/CourseAdmin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Create Levels</h1>
+
+<form method="post" enctype="multipart/form-data">
+    <div class="form-group">
+      
+
+        
+
+        <label asp-for="Header">Bashliq</label>
+        <textarea asp-for="Header" class="form-control"></textarea>
+        <span asp-validation-for="Header" class="text-danger"></span>
+
+        <label asp-for="Content">Content</label>
+        <textarea asp-for="Content" class="form-control"></textarea>
+        <span asp-validation-for="Content" class="text-danger"></span>
+
+    </div>
+    <input type="submit" class="btn btn-success btn-block" value="Create" />
+</form>
+
+<div class="row" style="margin-top:30px;">
+    <div class="col-12">
+        <a asp-action="Index" class="btn btn-primary btn-block">back to index</a>
+    </div>
+</div>
+

@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Tutor>
+<section class="blog-header">
+    <div class="blog-title-container">
+        <h1>Təlimçilər</h1>
+    </div>
+</section>
+
+<section class="blog-list clearfix">
+    <div class="container">
+        <div class="row">
+
+
+
+            @foreach (var item in Model)
+            {
+
+
+                <div class="blog-list-item-double">
+                    <div class="blog-list-item">
+                        <div class="row">
+                            <div class="blog-list-item-img">
+                                <img src="~/images/@item.image" alt="">
+                            </div>
+                            <div class="blog-list-details">
+                                <span>@item.date</span>
+                                <a href="~/KursSayt/2019/12/04/java-dili-il%c9%99-bagli-8-maraqli-fakt/index.html"><h3>@item.Head</h3></a>
+                                <p>
+                                    @item.content
+                                </p>
+                                <a class="blog-more" href="~/KursSayt/2019/12/04/java-dili-il%c9%99-bagli-8-maraqli-fakt/index.html">More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            }
+
+
+
+
+
+
+        </div> <!-- row -->
+
+
+    </div>
+
+
+</section>
+
+@section Scripts{ 
+
+<script>
+
+    document.getElementById("menu-item-85").style.display = "none";
+
+</script>
+}

@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Benefit>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/CourseAdmin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Index</h1>
+
+<div class="container-fluid">
+    <div class="row my-3">
+
+        <div class="col-6">
+            <a asp-area="CourseAdmin" asp-controller="Benefit" asp-action="Create" class="btn btn-block btn-primary">Create+++</a>
+        </div>
+    </div>
+</div>
+
+
+
+<table class="table table-bordered table-hover table-responsive">
+
+    <thead>
+        <tr>
+            <th>Header</th>
+            <th>Content</th>
+            
+            <th>Tools</th>
+
+        </tr>
+
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+               
+               
+                <td>@item.number</td>
+                <td>@item.Content</td>
+                <td style="align-items:center;">
+                    <a title="Edit" asp-action="Edit" asp-route-id="@item.id" class="btn-warning">Edit</a>
+                    @if (Model.Count() > 1)
+                    {<a title="Updtae" asp-action="Update" asp-route-id="@item.id" class="btn-primary">Details</a>
+                        <a title="Delete" asp-action="Delete" asp-route-id="@item.id" class="btn-danger">Delete</a>
+
+                    }
+
+
+
+                </td>
+
+            </tr>
+
+        }
+
+    </tbody>
+
+
+</table>
